@@ -30,17 +30,12 @@ scissors = '''
 '''
 
 # Real Code
-player_choice = input("What do you choose ? Type '0' for Rock, '1' for Paper or '2' for Scissors.\n")
+ascii = [rock, paper, scissors]
+
+player_choice = int(input("What do you choose ? Type '0' for Rock, '1' for Paper or '2' for Scissors.\n"))
 computer_choice = random.randint(0, 2)
 
-if player_choice == "0":
-    print(rock)
-elif player_choice == "1":
-    print(paper)
-elif player_choice == "2":
-    print(scissors)
-else:
-    print("Please enter a valid proposition")
+print(f'''{ascii[player_choice]}''')
 
 print("Computer choose :")
 
@@ -51,23 +46,19 @@ elif computer_choice == 1:
 elif computer_choice == 2:
     print(scissors)
 
-if player_choice == "0" and computer_choice == 0:
+if player_choice == computer_choice:
     print("Tie.")
-elif player_choice == "0" and computer_choice == 1:
+elif player_choice == 0 and computer_choice == 1:
     print("You loose.")
-elif player_choice == "0" and computer_choice == 2:
+elif player_choice == 0 and computer_choice == 2:
     print("You Win !")
-elif player_choice == "1" and computer_choice == 0:
+elif player_choice == 1 and computer_choice == 0:
     print("You Win !")
-elif player_choice == "1" and computer_choice == 1:
-    print("Tie.")
-elif player_choice == "1" and computer_choice == 2:
+elif player_choice == 1 and computer_choice == 2:
     print("You loose.")
-elif player_choice == "2" and computer_choice == 0:
+elif player_choice == 2 and computer_choice == 0:
     print("You loose.")
-elif player_choice == "2" and computer_choice == 1:
+elif player_choice == 2 and computer_choice == 1:
     print("You Win !")
-elif player_choice == "2" and computer_choice == 2:
-    print("Tie.")
 else:
     print("This line can't be printed.")
